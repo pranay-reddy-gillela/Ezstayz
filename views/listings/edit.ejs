@@ -1,0 +1,48 @@
+<% layout('layouts/boilerplate') -%>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <h1>Edit Your Listing</h1>
+            <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title :</label>
+                    <input name="Listing[title]" placeholder="Enter Title" type="text" value="<%= listing.title %>" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description :</label>
+                    <textarea name="Listing[description]" placeholder="Enter description" 
+                        class="form-control"> <%= listing.description %></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image Link : </label>
+                    <input name="Listing[image]" placeholder="Enter image Url" type="text"  class="form-control" value="<%= listing.image %>">
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-2">
+                        <label for="price" class="form-label">Price :</label>
+                        <input name="Listing[price]" placeholder="Enter Price" type="number" class="form-control"  value="<%= listing.price %>">
+                    </div>
+                    <div class="mb-3 col-4">
+                        <label for="location" class="form-label">Location :</label>
+                        <input name="Listing[location]" placeholder="Enter Location" type="text" class="form-control" value="<%= listing.location %>">
+                    </div>
+                    <div class="mb-3 col-6">
+                        <label for="country" class="form-label">Country :</label>
+                        <input name="Listing[country]" placeholder="Enter Country" type="text" class="form-control" value="<%= listing.country %>">
+                    </div>
+                </div>
+                <!-- <input name="Listing[title]" placeholder="Enter Title" type="text" value="<%= listing.title %>">
+        <br/><br/>
+        <textarea name="Listing[description]" placeholder="Enter description"><%= listing.description %></textarea>
+        <br/><br/>
+        <input name="Listing[image]" placeholder="Enter image Url" type="text" value="<%= listing.image %>">
+        <br/><br/>
+        <input name="Listing[price]" placeholder="Enter Price" type="number" value="<%= listing.price %>">
+        <br/><br/>
+        <input name="Listing[location]" placeholder="Enter Location" type="text" value="<%= listing.location %>">
+        <br/><br/>
+        <input name="Listing[country]" placeholder="Enter Country" type="text" value="<%= listing.country %>">
+        <br/><br/> -->
+                <button class="btn btn-dark edit-btn">Edit</button>
+            </form>
+        </div>
+    </div>
